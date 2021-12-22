@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -20,24 +24,32 @@ p {
   margin: 0;
 }
 
-.main {
+main {
   background: linear-gradient(240deg, rgb(88 27 187 / 20%), rgba(0, 0, 200, 0));
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  min-height: 100%;
+  padding: 5rem 0;
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
   margin: auto;
+  width: 100%;
   max-width: 40rem;
 }
 
 .users {
   background-color: #fff;
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 6px 20px 0px rgb(0 0 0 / 25%);
+}
+
+.users.empty {
+  background-color: rebeccapurple;
 }
 
 .user {
@@ -57,6 +69,9 @@ p {
   margin-right: 1rem;
   border-radius: 50%;
 }
+.user__info {
+  margin-right: 1.5rem;
+}
 
 .user__name {
   font-size: 1.125rem;
@@ -67,4 +82,34 @@ p {
 .user__position {
   color: #B7B7B7;
   font-size: 0.875rem;
+}
+
+.user__delete {
+  flex-shrink: 0;
+  align-self: flex-start;
+  width: 2rem;
+  height: 2rem;
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.user__delete svg {
+  transition: all 0.3s ease;
+} 
+
+.user__delete:hover svg,
+.user__delete:focus {
+  stroke: #000;
+}
+
+.add {
+  margin: 0 auto 2rem;
+  padding: 1rem 2rem;
+  border: 2px solid #581bbb;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  font-size: 1.25rem;
+  cursor: pointer;
 }
